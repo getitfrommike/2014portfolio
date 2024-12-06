@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Avenir Light', 'AvenirLTStd-Light', 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    background-color: #324158;
+    color: #56bcda;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+}
+
+body.show-background {
+    background-image: url('images/GOODLOO.png');
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.home-content, .portfolio-content {
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.header {
+    font-size: 2em;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin: 20px 0;
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 75px;
+    border-bottom: 1px solid #56bcda;
+    max-width: 50%;
+}
+
+.subtitle {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    background: rgba(86, 188, 218, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #56bcda;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    background: rgba(86, 188, 218, 0.2);
+}
+
+.portfolio-item h3 {
+    color: #78c1e5;
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+
+.portfolio-item p {
+    color: #56bcda;
+    line-height: 1.5;
+}
+
+.navcontainer {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: auto;
+    text-align: right;
+    z-index: 1001;  /* Above the hero banner */
+}
+
+.navcontainer a {
+    color: #56bcda;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2em;
+    font-family: 'Raleway', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navcontainer a:hover {
+    color: #78c1e5;
+}
+
+.navcontainer a.active {
+    border-bottom: 2px solid #56bcda;
+}
+
+.contact {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: #78c1e5;
+    padding: 10px;
+    background-color: rgba(50, 65, 88, 0.9);
+    border-top: 1px solid #56bcda;
+    z-index: 100;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #56bcda;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #9fe0f5;
+}
+
+.hidden {
+    visibility: hidden;
+}

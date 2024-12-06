@@ -1,0 +1,86 @@
+.portfolio-page {
+    background-color: #324158;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('images/GOODLOO.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.hero img {
+    display: none;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 6em;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-container {
+    margin-top: -50px;
+    position: relative;
+    z-index: 3;
+    background: #324158;
+    border-radius: 20px 20px 0 0;
+    padding: 40px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.portfolio-item {
+    background: rgba(86, 188, 218, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #56bcda;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    background: rgba(86, 188, 218, 0.2);
+}
+
+.portfolio-item h3 {
+    color: #78c1e5;
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+
+.portfolio-item p {
+    color: #56bcda;
+    line-height: 1.5;
+}
+
+.navcontainer a.active {
+    color: #9fe0f5;
+    border-bottom: 2px solid #9fe0f5;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 3em;
+    }
+}
