@@ -148,3 +148,48 @@ body.show-background {
 .hidden {
     visibility: hidden;
 }
+
+@media (max-width: 768px) {
+    .header {
+        max-width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    .navcontainer {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .contact {
+        position: static;
+        font-size: 1em;
+        padding: 20px;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .navcontainer a {
+        display: block;
+        margin: 10px 0;
+    }
+    .subtitle {
+        font-size: 1.2em;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.5em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .portfolio-item {
+        padding: 1rem;
+    }
+    .navcontainer a {
+        font-size: 1em;
+    }
+}

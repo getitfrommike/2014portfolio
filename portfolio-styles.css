@@ -1,86 +1,200 @@
-.portfolio-page {
-    background-color: #324158;
+/* Main container responsiveness */
+.cards-container {
+    position: absolute;
+    top: 225px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(86, 188, 218, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 40px 0;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
+.content-container {
     width: 100%;
-    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Projects grid responsiveness */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Banner responsiveness */
+.hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
     background-image: url('images/GOODLOO.png');
     background-size: cover;
-    background-position: left center;
-    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-left: 10%;
-}
-
-.hero img {
-    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: #324158;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .hero h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 0;
     color: white;
-    font-size: 6em;
-    position: relative;
-    z-index: 2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.portfolio-container {
-    margin-top: -50px;
-    position: relative;
-    z-index: 3;
-    background: #324158;
-    border-radius: 20px 20px 0 0;
-    padding: 40px;
+/* Project card responsiveness */
+.project-card {
+    background: transparent;
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(86, 188, 218, 0.3);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+.project-card h3 {
+    color: white;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin: 0 0 15px 0;
+    word-wrap: break-word;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.portfolio-item {
-    background: rgba(86, 188, 218, 0.1);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid #56bcda;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+.project-card p {
+    color: white;
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    background: rgba(86, 188, 218, 0.2);
-}
-
-.portfolio-item h3 {
-    color: #78c1e5;
-    margin-bottom: 1rem;
-    font-size: 1.5em;
-}
-
-.portfolio-item p {
+.project-card .tech-stack {
     color: #56bcda;
-    line-height: 1.5;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    margin: 0 0 15px 0;
+    word-wrap: break-word;
 }
 
-.navcontainer a.active {
-    color: #9fe0f5;
-    border-bottom: 2px solid #9fe0f5;
-    padding-bottom: 5px;
+.project-card .project-logo {
+    width: 100%;
+    max-width: min(280px, 90%);
+    height: auto;
+    margin: 15px auto 15px;
+    display: block;
+    border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+.project-card .project-link {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: #56bcda;
+    color: #324158;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Media Queries for better responsiveness */
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        margin-top: 100px;
+        padding: 1rem;
+        gap: 1.5rem;
     }
-    
-    .hero h1 {
-        font-size: 3em;
+
+    .project-card {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-grid {
+        margin-top: 80px;
+        padding: 0.8rem;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 0.8rem;
+    }
+
+    .project-card {
+        padding: 1.2rem;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #324158;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 150px;
+    position: relative;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;  
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    background: rgba(86, 188, 218, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgba(86, 188, 218, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    text-transform: capitalize;
+}
+
+.nav-link:hover {
+    background: rgba(86, 188, 218, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .bottom-nav {
+        bottom: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+
+    .nav-link {
+        padding: 8px 16px;
     }
 }
